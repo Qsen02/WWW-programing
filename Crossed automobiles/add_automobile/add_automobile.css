@@ -1,0 +1,135 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.form{
+    margin: 30px auto;
+    width: 30vw;
+    background-color: rgb(0, 191, 255);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    word-wrap: break-word;
+}
+
+.input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+}
+
+.input input{
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12pt;
+    padding-left: 10px;
+}
+
+.input select{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.radio{
+    display: flex;
+    justify-content: center;
+    font-size: 12pt;
+    gap:50px;
+}
+
+.radio p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.radio input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    accent-color: red;
+}
+
+.buttons{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+}
+
+.buttons a{
+    padding: 5px 15px 5px 15px;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+}
+
+.buttons a:hover{
+    background-color: rgb(203, 38, 38);
+}
+
+.buttons button{
+    background-color: transparent;
+    color: white;
+    border:none;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+@media(max-width:620px){
+    .form{
+        font-size: 12pt;
+    }
+    .input input{
+        width: 90%;
+        height: 20px;
+        font-size: 10pt;
+    }
+    .input select{
+        width: 90%;
+        height: 20px;
+        font-size: 10pt;
+    }
+    .buttons{
+        font-size: 12pt;
+        flex-direction: column;
+        gap:10px;
+        margin-top: 0;
+    }
+    .radio{
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+    }
+    .radio input[type="radio"]{
+        width: 15px;
+        height: 15px;
+    }
+    .buttons button{
+        font-size: 12pt;
+    }
+    .buttons button{
+        font-size: 12pt;
+    }
+}

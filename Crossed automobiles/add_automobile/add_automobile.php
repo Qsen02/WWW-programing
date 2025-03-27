@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Преминали автомобили</title>
+    <link rel="stylesheet" href="add_automobile.css">
 </head>
 
 <body>
@@ -25,10 +26,14 @@
         <p class="input">
             <label>Ремарке</label>
             <div class="radio">
-                <input type="radio" name="trailer" value="0" checked>
-                <label>Няма</label>
-                <input type="radio" name="trailer" value="1">
-                <label>Има</label>
+                <p>
+                    <input type="radio" name="trailer" value="0" checked>
+                    <label>Няма</label>
+                </p>
+                <p>
+                    <input type="radio" name="trailer" value="1">
+                    <label>Има</label>
+                </p>
             </div>
         </p>
         <p class="input">
@@ -45,11 +50,11 @@
         </p>
         <p class="input">
             <label>Град на шофьора</label>
-            <input type="number" name="number" required>
+            <input type="text" name="number" required>
         </p>
         <p class="input">
             <label>Държава на шофьора</label>
-            <input type="number" name="number" required>
+            <input type="text" name="number" required>
         </p>
         <div class="buttons">
             <a href="../automobile_list/automobile_list.php">
