@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.title{
+    text-align: center;
+    margin-top:20px;
+}
+
+.add{
+    margin: 10px auto;
+    font-size: 14pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.link{
+    padding: 5px 15px 5px 15px;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+}
+
+.link:hover{
+    background-color: rgb(203, 38, 38);
+}
+
+.container {
+    width: 80vw;
+    height: 80vh;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.header {
+    width: 90%;
+    padding: 20px;
+    background-color: rgb(0, 191, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-items {
+    width: 100%;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+}
+.body {
+    width: 92.3%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 2px solid black;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.body-row:last-child{
+    border: none;
+}
+
+.body-data {
+    flex: 0 0 12%;
+    height: 65%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid black;
+}
+
+.body-data:last-child {
+    border: none;
+}
+
+@media(max-width:1000px){
+    .header-items{
+        font-size: 12pt;
+    }
+    .container{
+        width: 90vw;
+    }
+}
+@media(max-width:800px){
+    .header-items{
+        font-size: 10pt;
+    }
+    .container{
+        width: 100vw;
+    }
+    .body-data {
+        flex: 0 0 8%;
+    }
+
+    .body-data a{
+        font-size: 10pt;
+    }
+}
