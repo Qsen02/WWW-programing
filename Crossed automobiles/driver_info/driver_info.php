@@ -19,6 +19,7 @@
             echo "<h2>Информация за шофьор {$info["firstname"]} {$info["lastname"]}</h2>";
             echo "<p>Град: {$info["city"]}</p>";
             echo "<p>Държава: {$info["country"]}</p>";
+            mysqli_close($dbConnection);
         ?>
         <a href="../automobile_list/automobile_list.php">Назад</a>
     </section>

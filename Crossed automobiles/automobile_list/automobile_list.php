@@ -79,6 +79,7 @@
                             </div>";
                     echo "</article>";
                 }
+                mysqli_close($dbConnection);
     } ?>
         </section>
     </section>
