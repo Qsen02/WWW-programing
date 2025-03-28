@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Преминали автомобили</title>
     <link rel="stylesheet" href="automobile_list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -14,13 +15,13 @@
     $sql = "SELECT * FROM automobile";
     $result = mysqli_query($dbConnection, $sql);
     if (!$result) {
-        echo "<h1>Няма автомобили все още</h1>";
+        echo "<h2 align='center'>Няма автомобили все още</h2>";
     } else {
         ?>
         <h2 class="title">Списък с автомобили преминали границата.</h2>
         <div class="add">
             <p>Добави нов автомобил:</p>
-            <a href="../add_automobile/add_automobile.php" class="link">+</a>
+            <a href="../add_automobile/add_automobile.php" class="link"><i class="fa-solid fa-plus"></i></a>
         </div>
         <section class="container">
             <section class="header">
@@ -43,7 +44,7 @@
                     <p>Месец на преминаване</p>
                 </div>
                 <div class="header-items">
-                    <p>Информация за шофьор</p>
+                    <p>Опции за шофьор</p>
                 </div>
             </section>
             <section class="body">
@@ -75,7 +76,9 @@
                                 <p>{$row["month"]}</p>
                             </div>";
                     echo "<div class='body-data'>
-                                <a href='../driver_info/driver_info.php?id={$row['driver_id']}' class='link'>info</a>
+                                <a href='../driver_info/driver_info.php?id={$row['driver_id']}' class='link'><i class='fa-solid fa-info'></i></a>
+                                <a href='../delete_automobile/delete_automobile.php?id={$row['id']}' class='link'><i class='fa-solid fa-trash'></i></a>
+                                <a href='../edit_automobile.php/edit_automobile.php?id={$row['id']}' class='link'><i class='fa-solid fa-pen-to-square'></i></a>
                             </div>";
                     echo "</article>";
                 }

@@ -3,7 +3,10 @@
 *::before {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -97,6 +100,7 @@ a {
     justify-content: center;
     align-items: center;
     border-right: 2px solid black;
+    gap:5px;
 }
 
 .body-data:last-child {
@@ -109,6 +113,9 @@ a {
     }
     .container {
         width: 90vw;
+    }
+    .body-data:last-child{
+        flex-direction: column;
     }
 }
 @media (max-width: 800px) {
