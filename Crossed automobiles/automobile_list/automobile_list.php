@@ -7,6 +7,14 @@
     <title>Преминали автомобили</title>
     <link rel="stylesheet" href="automobile_list.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+    function confirmDeletion(id) {
+        const isAccept = confirm("Сигурни ли сте, че искате да изтриете този автомобил?");
+        if (isAccept) {
+            location.replace(`http://localhost/WWW%20%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b8%d1%80%d0%b0%d0%bd%d0%b5/Crossed%20automobiles/delete_automobile/delete_automobile.php?id=${id}`);
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -77,7 +85,7 @@
                             </div>";
                     echo "<div class='body-data'>
                                 <a href='../driver_info/driver_info.php?id={$row['driver_id']}' class='link'><i class='fa-solid fa-info'></i></a>
-                                <a href='../delete_automobile/delete_automobile.php?id={$row['id']}' class='link'><i class='fa-solid fa-trash'></i></a>
+                                <a  href='javascript:void(0);' onclick='confirmDeletion({$row['id']})' class='link'><i class='fa-solid fa-trash'></i></a>
                                 <a href='../edit_automobile.php/edit_automobile.php?id={$row['id']}' class='link'><i class='fa-solid fa-pen-to-square'></i></a>
                             </div>";
                     echo "</article>";
