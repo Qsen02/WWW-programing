@@ -86,7 +86,7 @@
                     echo "<div class='body-data'>
                                 <a href='../driver_info/driver_info.php?id={$row['driver_id']}' class='link'><i class='fa-solid fa-info'></i></a>
                                 <a  href='javascript:void(0);' onclick='confirmDeletion({$row['id']},{$row['driver_id']})' class='link'><i class='fa-solid fa-trash'></i></a>
-                                <a href='../edit_automobile.php/edit_automobile.php?id={$row['id']}' class='link'><i class='fa-solid fa-pen-to-square'></i></a>
+                                <a href='../edit_automobile/edit_automobile.php?id={$row['id']}' class='link'><i class='fa-solid fa-pen-to-square'></i></a>
                             </div>";
                     echo "</article>";
                 }
