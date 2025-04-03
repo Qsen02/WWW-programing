@@ -9,17 +9,21 @@
 </head>
 
 <body>
+    <header>
+        <p>Преминали автомобили</p>
+        <a href="#" class="link">Изход</a>
+    </header>
     <section class="driver-container">
         <?php
-            include "../constants.php";
-            $driverId = $_GET["id"];
-            $sqlQuery = "SELECT * FROM drivers WHERE id=$driverId";
-            $result = mysqli_query($dbConnection, $sqlQuery);
-            $info = mysqli_fetch_assoc($result);
-            echo "<h2>Информация за шофьор {$info["firstname"]} {$info["lastname"]}</h2>";
-            echo "<p>Град: {$info["city"]}</p>";
-            echo "<p>Държава: {$info["country"]}</p>";
-            mysqli_close($dbConnection);
+        include "../constants.php";
+        $driverId = $_GET["id"];
+        $sqlQuery = "SELECT * FROM drivers WHERE id=$driverId";
+        $result = mysqli_query($dbConnection, $sqlQuery);
+        $info = mysqli_fetch_assoc($result);
+        echo "<h2>Информация за шофьор {$info["firstname"]} {$info["lastname"]}</h2>";
+        echo "<p>Град: {$info["city"]}</p>";
+        echo "<p>Държава: {$info["country"]}</p>";
+        mysqli_close($dbConnection);
         ?>
         <a href="../automobile_list/automobile_list.php">Назад</a>
     </section>

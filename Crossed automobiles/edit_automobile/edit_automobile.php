@@ -21,7 +21,11 @@
         } else {
             $automobile = mysqli_fetch_assoc($result);
             ?>
-            <form action=<?php echo "edit.php?id={$automobile['id']}";?> method="post" class="form">
+            <header>
+                <p>Преминали автомобили</p>
+                <a href="#" class="link">Изход</a>
+            </header>
+            <form action=<?php echo "edit.php?id={$automobile['id']}"; ?> method="post" class="form">
                 <h2>Добавете автомобил от тук</h2>
                 <p class="input">
                     <label>Номер</label>
@@ -95,7 +99,7 @@
                         Отмени
                     </a>
                 </div>
-                <input type="hidden" name="driver_id" value=<?php echo $automobile["driver_id"]?>>
+                <input type="hidden" name="driver_id" value=<?php echo $automobile["driver_id"] ?>>
             </form>
             <?php
             mysqli_close($dbConnection);

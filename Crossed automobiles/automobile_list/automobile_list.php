@@ -21,16 +21,20 @@
     <?php
     include "../constants.php";
     $sql = "";
-    if (!isset($_GET["query"]) || !isset($_GET["order"])) {
+    if (!isset($_GET["query"])) {
         $sql = "SELECT * FROM automobile";
     } else {
-        $sql = "SELECT * FROM automobile ORDER BY {$_GET["query"]} {$_GET["order"]};";
+        $sql = "SELECT * FROM automobile ORDER BY {$_GET["query"]} ASC";
     }
     $result = mysqli_query($dbConnection, $sql);
     if (!$result) {
         echo "<h2 align='center'>Няма автомобили все още</h2>";
     } else {
         ?>
+        <header>
+            <p>Преминали автомобили</p>
+            <a href="#" class="link">Изход</a>
+        </header>
         <h2 class="title">Списък с автомобили преминали границата.</h2>
         <div class="add">
             <p>Добави нов автомобил:</p>
@@ -40,27 +44,57 @@
             <section class="header">
                 <div class="header-items">
                     <p>Номер</p>
-                    <a href="./automobile_list.php?query=number&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
+                    <a href="./automobile_list.php?query=number" class=<?php if (isset($_GET["query"]) && $_GET["query"] == "number")
+                        echo "active";
+                    else
+                        echo "link"; ?>>
+                        <i class="fa-solid fa-sort"></i>
+                    </a>
                 </div>
                 <div class="header-items">
                     <p>Тип автомобил</p>
-                    <a href="./automobile_list.php?query=type&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
+                    <a href="./automobile_list.php?query=type" class=<?php if (isset($_GET["query"]) && $_GET["query"] == "type")
+                        echo "active";
+                    else
+                        echo "link"; ?>>
+                        <i class="fa-solid fa-sort"></i>
+                    </a>
                 </div>
                 <div class="header-items">
                     <p>Ремарке</p>
-                    <a href="./automobile_list.php?query=trailer&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
+                    <a href="./automobile_list.php?query=trailer" class=<?php if (isset($_GET["query"]) && $_GET["query"] == "trailer")
+                        echo "active";
+                    else
+                        echo "link"; ?>>
+                        <i class="fa-solid fa-sort"></i>
+                    </a>
                 </div>
                 <div class="header-items">
                     <p>Брой пътници</p>
-                    <a href="./automobile_list.php?query=passengers&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
+                    <a href="./automobile_list.php?query=passengers" class=<?php if (isset($_GET["query"]) && $_GET["query"] == "passengers")
+                        echo "active";
+                    else
+                        echo "link"; ?>>
+                        <i class="fa-solid fa-sort"></i>
+                    </a>
                 </div>
                 <div class="header-items">
                     <p>Име на шофьор</p>
-                    <a href="./automobile_list.php?query=driver_name&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
+                    <a href="./automobile_list.php?query=driver_name" class=<?php if (isset($_GET["query"]) && $_GET["query"] == "driver_name")
+                        echo "active";
+                    else
+                        echo "link"; ?>>
+                        <i class="fa-solid fa-sort"></i>
+                    </a>
                 </div>
                 <div class="header-items">
                     <p>Месец на преминаване</p>
-                    <a href="./automobile_list.php?query=month&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
+                    <a href="./automobile_list.php?query=month" class=<?php if (isset($_GET["query"]) && $_GET["query"] == "month")
+                        echo "active";
+                    else
+                        echo "link"; ?>>
+                        <i class="fa-solid fa-sort"></i>
+                    </a>
                 </div>
                 <div class="header-items">
                     <p>Опции за шофьор</p>

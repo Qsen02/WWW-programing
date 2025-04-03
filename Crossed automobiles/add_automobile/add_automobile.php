@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <header>
+        <p>Преминали автомобили</p>
+        <a href="#" class="link">Изход</a>
+    </header>
     <form action="add.php" method="post" class="form">
         <h2>Добавете автомобил от тук</h2>
         <p class="input">
