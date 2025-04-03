@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="automobile_list.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script>
-    function confirmDeletion(id,driver_id) {
-        const isAccept = confirm("Сигурни ли сте, че искате да изтриете този автомобил?");
-        if (isAccept) {
-            location.replace(`http://localhost/WWW%20%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b8%d1%80%d0%b0%d0%bd%d0%b5/Crossed%20automobiles/delete_automobile/delete_automobile.php?id=${id}&driver_id=${driver_id}`);
+        function confirmDeletion(id, driver_id) {
+            const isAccept = confirm("Сигурни ли сте, че искате да изтриете този автомобил?");
+            if (isAccept) {
+                location.replace(`http://localhost/WWW%20%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b8%d1%80%d0%b0%d0%bd%d0%b5/Crossed%20automobiles/delete_automobile/delete_automobile.php?id=${id}&driver_id=${driver_id}`);
+            }
         }
-    }
-</script>
+    </script>
 </head>
 
 <body>
     <?php
     include "../constants.php";
-    $sql = "SELECT * FROM automobile";
+    $sql = "";
+    if (!isset($_GET["query"]) || !isset($_GET["order"])) {
+        $sql = "SELECT * FROM automobile";
+    } else {
+        $sql = "SELECT * FROM automobile ORDER BY {$_GET["query"]} {$_GET["order"]};";
+    }
     $result = mysqli_query($dbConnection, $sql);
     if (!$result) {
         echo "<h2 align='center'>Няма автомобили все още</h2>";
@@ -35,21 +40,27 @@
             <section class="header">
                 <div class="header-items">
                     <p>Номер</p>
+                    <a href="./automobile_list.php?query=number&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
                 </div>
                 <div class="header-items">
                     <p>Тип автомобил</p>
+                    <a href="./automobile_list.php?query=type&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
                 </div>
                 <div class="header-items">
                     <p>Ремарке</p>
+                    <a href="./automobile_list.php?query=trailer&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
                 </div>
                 <div class="header-items">
                     <p>Брой пътници</p>
+                    <a href="./automobile_list.php?query=passengers&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
                 </div>
                 <div class="header-items">
                     <p>Име на шофьор</p>
+                    <a href="./automobile_list.php?query=driver_name&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
                 </div>
                 <div class="header-items">
                     <p>Месец на преминаване</p>
+                    <a href="./automobile_list.php?query=month&order=asc" class="link"><i class="fa-solid fa-sort"></i></a>
                 </div>
                 <div class="header-items">
                     <p>Опции за шофьор</p>
