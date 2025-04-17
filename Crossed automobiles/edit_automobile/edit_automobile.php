@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Преминали автомобили</title>
     <link rel="stylesheet" href="../add_automobile/add_automobile.css">
-    <script src="../validation.js"></script>
+    <script src="../automobile_validation.js"></script>
 </head>
 
 <body>
