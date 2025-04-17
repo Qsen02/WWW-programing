@@ -22,7 +22,7 @@
     include "../constants.php";
     $sql = "";
     if (!isset($_GET["query"])) {
-        $sql = "SELECT * FROM automobile";
+        $sql = "SELECT * FROM automobile ORDER BY number ASC";
     } else {
         $sql = "SELECT * FROM automobile ORDER BY {$_GET["query"]} ASC";
     }
@@ -44,7 +44,7 @@
             <section class="header">
                 <div class="header-items">
                     <p>Номер</p>
-                    <a href="./automobile_list.php?query=number" class=<?php if (isset($_GET["query"]) && $_GET["query"] == "number")
+                    <a href="./automobile_list.php?query=number" class=<?php if (!isset($_GET["query"]) || $_GET["query"] == "number")
                         echo "active";
                     else
                         echo "link"; ?>>
