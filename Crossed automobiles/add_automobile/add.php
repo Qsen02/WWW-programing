@@ -1,15 +1,15 @@
 <?php
     include "../constants.php";
-    $number = $_POST["number"];
-    $type = $_POST["type"];
-    $trailer = intval($_POST["trailer"]);
-    $passengers = intval($_POST["passengers"]);
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
-    $month = intval($_POST["month"]);
-    $city = $_POST["city"];
-    $country = $_POST["country"];
-    $driver_name = "{$firstname} {$lastname}";
+    $number = mysqli_real_escape_string($dbConnection,$_POST["number"]);
+    $type = mysqli_real_escape_string($dbConnection,$_POST["type"]);
+    $trailer = mysqli_real_escape_string($dbConnection,intval($_POST["trailer"]));
+    $passengers = mysqli_real_escape_string($dbConnection,intval($_POST["passengers"]));
+    $firstname =mysqli_real_escape_string($dbConnection, $_POST["firstname"]);
+    $lastname = mysqli_real_escape_string($dbConnection,$_POST["lastname"]);
+    $month = mysqli_real_escape_string($dbConnection,intval($_POST["month"]));
+    $city = mysqli_real_escape_string($dbConnection,$_POST["city"]);
+    $country = mysqli_real_escape_string($dbConnection,$_POST["country"]);
+    $driver_name = mysqli_real_escape_string($dbConnection,"{$firstname} {$lastname}");
     $automobile_id = mysqli_insert_id($dbConnection);
     $createDriverQuery = "INSERT INTO `drivers` (`id`,`firstname`,`lastname`,`city`,`country`) VALUES (NULL,'$firstname','$lastname','$city','$country')";
     if (!mysqli_query($dbConnection, $createDriverQuery)) {
@@ -22,7 +22,5 @@
         echo "<h2 align='center'>Грешка при добавянето на данните!</h2>";
     }
     mysqli_close($dbConnection);
+    header("Location:../automobile_list/automobile_list.php");
 ?>
-<script>
-    window.location.replace("http://localhost/WWW%20%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b8%d1%80%d0%b0%d0%bd%d0%b5/Crossed%20automobiles/automobile_list/automobile_list.php");
-</script>
