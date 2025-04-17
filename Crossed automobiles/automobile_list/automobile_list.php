@@ -27,13 +27,21 @@
         $sql = "SELECT * FROM automobile ORDER BY {$_GET["query"]} ASC";
     }
     $result = mysqli_query($dbConnection, $sql);
+    session_start();
     if (!$result) {
         echo "<h2 align='center'>Няма автомобили все още</h2>";
     } else {
         ?>
         <header>
             <p>Преминали автомобили</p>
-            <a href="#" class="link">Изход</a>
+            <?php
+            if($_SESSION["user"]){
+                echo "<a href='#' class='link'>Изход</a>";
+            }else{
+                echo "<a href='../login/login.html' class='link'>Вход</a>";
+                echo "<a href='../register/register.html' class='link'>Регистрация</a>";
+            } 
+            ?>
         </header>
         <h2 class="title">Списък с автомобили преминали границата.</h2>
         <div class="add">
