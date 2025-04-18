@@ -7,6 +7,14 @@
     <title>Преминали автомобили</title>
     <link rel="stylesheet" href="../add_automobile/add_automobile.css">
     <script src="../automobile_validation.js"></script>
+    <script>
+        function confirmLogout() {
+            const isAccept = confirm("Сигурни ли сте, че искате да излезете от профила си?");
+            if (isAccept) {
+                location.replace(`http://localhost/WWW%20%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b8%d1%80%d0%b0%d0%bd%d0%b5/Crossed%20automobiles/logout/logout.php`);
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -26,7 +34,7 @@
                 <?php
                 session_start();
                 if (isset($_SESSION["user"])) {
-                    echo "<a href='#' class='link'>Изход</a>";
+                    echo "<a href='javascript:void(0)' onclick='confirmLogout()' class='link'>Изход</a>";
                 } else {
                     echo "<a href='../login/login.php' class='link'>Вход</a>";
                     echo "<a href='../register/register.php' class='link'>Регистрация</a>";
