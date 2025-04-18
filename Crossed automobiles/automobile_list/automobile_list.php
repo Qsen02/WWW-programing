@@ -44,8 +44,8 @@
             if (isset($_SESSION["user"])) {
                 echo "<a href='javascript:void(0)' onclick='confirmLogout()' class='link'>Изход</a>";
             } else {
-                echo "<a href='../login/login.php' class='link'>Вход</a>";
-                echo "<a href='../register/register.php' class='link'>Регистрация</a>";
+                echo "<a href='../login/login_form.php' class='link'>Вход</a>";
+                echo "<a href='../register/register_form.php' class='link'>Регистрация</a>";
             }
             ?>
         </header>

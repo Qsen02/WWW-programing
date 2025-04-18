@@ -29,17 +29,8 @@
             }
         ?>
     </header>
-    <form action="register.php" method="post" class="form">
-        <h2>Тук можете да се регистрирате</h2>
-        <p class="input">
-            <label>Малко име</label>
-            <input type="text" name="firstname" required>
-        </p>
-        </p>
-        <p class="input">
-            <label>Фамилия</label>
-            <input type="text" name="lastname" required>
-        </p>
+    <form action="login.php" method="post" class="form">
+        <h2>Тук можете да си влезете в профила</h2>
         <p class="input">
             <label>Имейл</label>
             <input type="text" name="email" required>
@@ -48,12 +39,8 @@
             <label>Парола</label>
             <input type="password" name="password" required>
         </p>
-        <p class="input">
-            <label>Повтори паролата</label>
-            <input type="password" name="repass" required>
-        </p>
         <div class="buttons">
-            <button type="submit">Регистрация</button>
+            <button type="submit">Влез</button>
         </div>
     </form>
 </body>
