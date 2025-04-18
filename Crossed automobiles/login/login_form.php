@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../add_automobile/add_automobile.css">
+    <script src="../login_validation.js"></script>
     <script>
         function confirmLogout() {
             const isAccept = confirm("Сигурни ли сте, че искате да излезете от профила си?");

@@ -26,7 +26,7 @@ $result = mysqli_query($dbConnection, $sql);
 if ($user = mysqli_fetch_assoc($result)) {
     $_SESSION["user"] = $user;
 } else {
-    echo "<h2 align='center'>Не можа да се зареди данните на потребителя.</h2>";
+    echo "<h2 align='center'>Не можаха да се заредят данните на потребителя.</h2>";
     exit;
 }
 
