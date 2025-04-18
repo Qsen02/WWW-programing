@@ -35,12 +35,12 @@
         <header>
             <p>Преминали автомобили</p>
             <?php
-            if($_SESSION["user"]){
+            if (isset($_SESSION["user"])) {
                 echo "<a href='#' class='link'>Изход</a>";
-            }else{
-                echo "<a href='../login/login.html' class='link'>Вход</a>";
-                echo "<a href='../register/register.html' class='link'>Регистрация</a>";
-            } 
+            } else {
+                echo "<a href='../login/login.php' class='link'>Вход</a>";
+                echo "<a href='../register/register.php' class='link'>Регистрация</a>";
+            }
             ?>
         </header>
         <h2 class="title">Списък с автомобили преминали границата.</h2>

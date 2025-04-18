@@ -32,7 +32,7 @@ header a:hover{
 }
 
 header p {
-    flex: 0 0 90%;
+    flex: 0 0 80%;
     font-weight: bold;
     font-size: 16pt;
     padding-left: 20px;

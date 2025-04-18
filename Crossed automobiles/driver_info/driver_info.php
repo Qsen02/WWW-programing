@@ -11,7 +11,15 @@
 <body>
     <header>
         <p>Преминали автомобили</p>
-        <a href="#" class="link">Изход</a>
+        <?php
+        session_start();
+        if (isset($_SESSION["user"])) {
+            echo "<a href='#' class='link'>Изход</a>";
+        } else {
+            echo "<a href='../login/login.php' class='link'>Вход</a>";
+            echo "<a href='../register/register.php' class='link'>Регистрация</a>";
+        }
+        ?>
     </header>
     <section class="driver-container">
         <?php
