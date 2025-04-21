@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Време на генериране: 30 март 2025 в 16:10
+-- Време на генериране: 21 апр 2025 в 11:07
 -- Версия на сървъра: 10.4.32-MariaDB
 -- Версия на PHP: 8.2.12
 
@@ -72,6 +72,29 @@ INSERT INTO `drivers` (`id`, `firstname`, `lastname`, `city`, `country`) VALUES
 (4, 'Георги', 'Георгиев', 'София', 'България'),
 (19, 'Калоян', 'Радостинов', 'Плевен', 'България');
 
+-- --------------------------------------------------------
+
+--
+-- Структура на таблица `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Схема на данните от таблица `users`
+--
+
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
+(9, 'Иванчо', 'Иванов', 'ivancho@gmail.com', '$2y$10$ldhLfd9siCylMOV1xaQQEu9d14EOQ/JQQ8ZiijYYJTA625F.Ni1TC'),
+(10, 'Ясен', 'Генчев', 'qsen@gmail.com', '$2y$10$xW4CxqKY0ESrZLhj9Wk0Eu1s/ab/VN2Heha/d0DI30bj7owdda.rC'),
+(13, 'Иванчо', 'Пенчев', 'ivancho@gmail.com', '$2y$10$YW87pnzmuzhMtzA7FHl25.w1yGDD19s6XVRdW43.8.303NKmgCSlO');
+
 --
 -- Indexes for dumped tables
 --
@@ -90,6 +113,12 @@ ALTER TABLE `drivers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индекси за таблица `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -97,13 +126,19 @@ ALTER TABLE `drivers`
 -- AUTO_INCREMENT for table `automobile`
 --
 ALTER TABLE `automobile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ограничения за дъмпнати таблици

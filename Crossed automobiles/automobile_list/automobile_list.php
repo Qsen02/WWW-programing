@@ -14,13 +14,14 @@
                 location.replace(`http://localhost/WWW%20%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b8%d1%80%d0%b0%d0%bd%d0%b5/Crossed%20automobiles/delete_automobile/delete_automobile.php?id=${id}&driver_id=${driver_id}`);
             }
         }
-        function confirmLogout(){
+        function confirmLogout() {
             const isAccept = confirm("Сигурни ли сте, че искате да излезете от профила си?");
             if (isAccept) {
                 location.replace(`http://localhost/WWW%20%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b8%d1%80%d0%b0%d0%bd%d0%b5/Crossed%20automobiles/logout/logout.php`);
             }
         }
     </script>
+    <script src="./getDrivers.js"></script>
 </head>
 
 <body>
@@ -152,7 +153,11 @@
                 mysqli_close($dbConnection);
     } ?>
         </section>
-    </section>
+        <button id="get-drivers">Справка шофьори</button>
+        </section>
+        <section id="drivers" class="container">
+
+        </section>
 </body>
 
 </html>
